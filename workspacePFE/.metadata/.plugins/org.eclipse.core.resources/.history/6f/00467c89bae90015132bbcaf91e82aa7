@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="stylesheet" type="text/css" href="./css/style1.css">
+  <title>FILIERE BOIS</title>  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <script>
+	function s_onchange(value)
+	{
+   		document.getElementById("a_id").href += value;
+	}
+	var sel = document.getElementById("user_idp");
+	s_onchange(sel.options[sel.selectedIndex].value);
+	</script>
+</head>
+
+<body>
+ <div id ="1">
+
+<img id="logoHome" src="/images/logos/portal_logo.png" alt="Normandie Université" />
+
+<div id="2">
+<h3>Bienvenue sur FILIERE BOIS)</h3>
+				<p>Ce website est maintenu par FILIERE BOIS;
+				et a &eacute;t&eacute; d&eacute;velopp&eacute; par FILIERE BOIS 
+				</p></div>
+
+<p><span class="bold">L'accès à l'ENT et ses services nécessite une authentification,<br /> veuillez sélectionner un établissement:</span></p>
+
+<form id="IdPList" name="IdPList" method="post" onsubmit="return checkForm()" action="/WAYF.php?entityID=https%3A%2F%2Fent.normandie-univ.fr&amp;return=https%3A%2F%2Fent.normandie-univ.fr%2FShibboleth.sso%2FWAYF%3FSAMLDS%3D1%26target%3Dcookie%253A4df550e7">
+	<p>
+		<select name="user_idp"> 
+			<option value="-" >Votre etablissement ...</option>
+		
+		<option value="https://shibboleth.ensicaen.fr/idp/shibboleth" selected="selected">ENSICAEN</option>
+		<option value="https://shibboleth.insa-rouen.fr/idp/shibboleth">INSA de Rouen</option>
+		</select>
+		<a href="XX?value=" id="a_id">lien<a>
+		<input type="submit" name="Select" accesskey="s" tabindex="10" value="S&eacute;lection" /> 
+	</p>
+	<p>
+		<input tabindex="8" type="checkbox" name="session" value="true" />		<span class="warning">Se souvenir de mon choix pour cette session.</span><br />
+		
+			</p>
+</form>
+
+
+<div id="logos">
+
+<a href="#" onclick="document.IdPList.user_idp.value='https://shibboleth.ensicaen.fr/idp/shibboleth'; document.IdPList.submit();"><img src="/images/logos/logo-ensicaen.png" alt="ENSICAEN" border="0"/></a>
+
+<a href="#" onclick="document.IdPList.user_idp.value='https://shibboleth.insa-rouen.fr/idp/shibboleth'; document.IdPList.submit();"><img src="/images/logos/logo-insa-rouen.png" alt="INSA Rouen" border="0"/></a>
+
+
+<a href="#" onclick="document.IdPList.user_idp.value='https://idp.unicaen.fr/idp/shibboleth'; document.IdPList.submit();"><img src="/images/logos/logo-unicaen.png" alt="Université de Caen Normandie" border="0"/></a>
+
+<a href="#" onclick="document.IdPList.user_idp.value='https://idp.univ-lehavre.fr/idp/shibboleth'; document.IdPList.submit();"><img src="/images/logos/logo-univ-havre.png" alt="Université du Havre" border="0"/></a>
+
+<a href="#" onclick="document.IdPList.user_idp.value='urn:mace:cru.fr:federation:univ-rouen.fr'; document.IdPList.submit();"><img src="/images/logos/logo-univ-rouen.png" alt="Université de Rouen" border="0"/></a>
+
+<a href="#" onclick="document.IdPList.user_idp.value='https://idp.normandie-univ.fr/idp/shibboleth'; document.IdPList.submit();"><img src="/images/logos/logo-nu.png" alt="Normandie Université" border="0"/></a>
+
+</div>
+
+</div>
+
+</body>
+</html>
